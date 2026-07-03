@@ -1,0 +1,38 @@
+{
+    "name": "genai/i18n",
+    "version": "1.0.0",
+    "description": "Localization for the GenAI stack — Spring-style message keys compiled from per-locale .ini catalogs into a reflection-free Cache\\Messages, a Translator bean, a global __() view helper, and a LocaleInterceptor that resolves the request locale (?lang / session / Accept-Language). PHP 5.3-safe at runtime.",
+    "type": "library",
+    "license": "MIT",
+    "repositories": [
+        { "type": "path", "url": "../php-attribute" },
+        { "type": "path", "url": "../php-container" },
+        { "type": "path", "url": "../php-property" },
+        { "type": "path", "url": "../php-di" },
+        { "type": "path", "url": "../php-http" },
+        { "type": "path", "url": "../php-web" },
+        { "type": "path", "url": "../php-session" }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "genai/property": "*"
+    },
+    "suggest": {
+        "genai/attribute": "PHP 8 build-time compilation of config/messages/*.ini into Cache\\Messages.",
+        "genai/di": "Auto-wires the Translator bean (the bundle's #[Configuration]).",
+        "genai/web": "LocaleInterceptor (the Interceptor contract) for per-request locale resolution.",
+        "genai/session": "Persisting the chosen locale across requests (used by LocaleInterceptor)."
+    },
+    "extra": {
+        "genai": {
+            "processors": ["GenAI\\I18n\\Processor\\MessagesProcessor"],
+            "scan": ["GenAI\\I18n\\Bundle"]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "GenAI\\I18n\\": "src/"
+        },
+        "files": ["src/helpers.php"]
+    }
+}
