@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Localization for the GenAI stack — Spring-style message keys compiled from per-locale .ini catalogs into a reflection-free Cache\\Messages, a Translator bean, a global __() view helper, and a LocaleInterceptor that resolves the request locale (?lang / session / Accept-Language). PHP 5.3-safe at runtime.",
     "type": "library",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "repositories": [
         { "type": "path", "url": "../php-attribute" },
         { "type": "path", "url": "../php-container" },
